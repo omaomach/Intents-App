@@ -1,6 +1,7 @@
 package com.omao.explicitintents
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         var tv1: TextView = findViewById(R.id.tv1)
         var btn1: Button = findViewById(R.id.btn1)
+        var btn2: Button = findViewById(R.id.btn2)
 
         btn1.setOnClickListener() {
             // Explicit Intents
@@ -22,6 +24,12 @@ class MainActivity : AppCompatActivity() {
             i.putExtra("name", "Joash")
 
             startActivity(i)
+        }
+
+        btn2.setOnClickListener() {
+            intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.google.com")
+            startActivity(intent)
         }
 
     }
